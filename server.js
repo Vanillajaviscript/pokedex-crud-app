@@ -24,11 +24,11 @@ app.get('/', (req, res) => {
 })
 //Index
 app.get('/pokemon', (req, res) => {
-    res.send()
+    res.render('index.ejs', {data: pokemon})
 });
 //Show
 app.get('/pokemon/:id', (req, res) => {
-    res.render('show.ejs', {});
+    res.render('show.ejs', {data: pokemon[req.params.id]});
 });
 //New
 app.get('/pokemon/new', (req, res) => {
