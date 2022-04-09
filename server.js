@@ -22,9 +22,34 @@ app.use('/public', express.static('public'));
 app.get('/', (req, res) => {
     res.send('Root');
 })
-
-app.get('/pokedex', (req, res) => {
+//Index
+app.get('/pokemon', (req, res) => {
     res.send()
+});
+//Show
+app.get('/pokemon/:id', (req, res) => {
+    res.render('show.ejs', {});
+});
+//New
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.ejs', {});
+});
+
+//Edit
+app.get('/pokemon/:id/edit', (req, res) => {
+    res.render('edit.ejs', {});
+});
+// CREATE
+app.post('/pokemon', (req, res) => {
+
+});
+// UPDATE
+app.put('/pokemon/:id', (req, res) => {
+
+});
+//Delete
+app.delete('/pokemon/:id', (req, res) => {
+
 })
 
 
