@@ -23,6 +23,9 @@ app.get('/', (req, res) => {
     res.send('Root');
 })
 
+app.get('/pokedex', (req, res) => {
+    res.send()
+})
 
 
 ///////////////////////////
