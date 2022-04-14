@@ -2,6 +2,14 @@
 <html lang="en">
     <%- include('partials/head.ejs') %>
 <body>
-    
+    <h1>Pokemon New Page</h1>
+    <!--  NOTE: action will be the route, method will be the HTTP verb-->
+    <form action="/pokemon" method="POST">
+      Pokemon: <input type="text" name="name" /><br />
+      Type: <input type="text" name="image" /><br />
+      placeholder: <input type="checkbox" name="" /><br />
+      <input type="submit" value="Create Pokemon" />
+    </form>
+</body>
 </body>
 </html>

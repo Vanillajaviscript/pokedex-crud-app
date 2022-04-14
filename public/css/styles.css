@@ -1,0 +1,12 @@
+.container {
+    display: -webkit-flex;
+    -webkit-flex-flow: column wrap;
+    -webkit-align-items: center;
+}
+ul {
+    display: -webkit-flex;
+}
+
+li {
+    -webkit-flex: 1;
+}

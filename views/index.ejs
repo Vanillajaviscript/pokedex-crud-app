@@ -3,11 +3,23 @@
     <%- include('partials/head.ejs') %>
 <body>
     <div class="container">
-        <h1>POKEDEX</h1>
-
-
-
-
+        <nav>
+            <a href="/pokemon/new">Create your own Pokemon</a>
+          </nav>
+          <h1>POKEDEX!</h1>
+          <ul>
+            <% for(let pokemon in allPokemon) { %>
+            <li>
+              <h2><a href="/pokemon/<%=pokemon%>"><%=allPokemon[pokemon].name %></a></h2>
+                <form action="/pokemon/<%=pokemon%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE" />
+                </form>
+              <a href="/pokemon/<%= pokemon %>/edit">
+                <button>Edit</button>
+              </a>
+            </li>
+            <% } %>
+          </ul>
     </div>
     
 </body>
