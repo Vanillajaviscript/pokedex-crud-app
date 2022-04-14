@@ -4,17 +4,24 @@
 <body>
     <div class="container">
         <nav>
-            <a href="/pokemon/new">Create your own Pokemon</a>
+            <h3><a href="/pokemon/new">Create your own Pokemon</a></h3>
           </nav>
-          <h1>POKEDEX!</h1>
+          <h1>POKEDEX!</h1> 
+         
+        <div class="images">
+            <img src="http://img.pokemondb.net/artwork/bulbasaur.jpg">
+            <img src="http://img.pokemondb.net/artwork/ivysaur.jpg">
+            <img src="http://img.pokemondb.net/artwork/venusaur.jpg">
+            <img src="http://img.pokemondb.net/artwork/charmander.jpg">
+        </div>
           <ul>
             <% for(let pokemon in allPokemon) { %>
             <li>
-              <h2><a href="/pokemon/<%=pokemon%>"><%=allPokemon[pokemon].name %></a></h2>
+                <h2><a href="/pokemon/<%=pokemon%>"><%=allPokemon[pokemon].name %></a></h2>
                 <form action="/pokemon/<%=pokemon%>?_method=DELETE" method="POST">
                 <input type="submit" value="DELETE" />
                 </form>
-              <a href="/pokemon/<%= pokemon %>/edit">
+                <a href="/pokemon/<%= pokemon %>/edit">
                 <button>Edit</button>
               </a>
             </li>

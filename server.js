@@ -19,44 +19,40 @@ app.use('/public', express.static('public'));
 ///////////////////////
 // Declare Routes and Routers 
 ///////////////////////
-app.get('/', (req, res) => {
-    res.send('Root');
-})
+
 //Index
 app.get('/pokemon', (req, res) => {
     res.render('index.ejs', {allPokemon: pokemon})
 });
-//Show
-app.get('/pokemon/:id', (req, res) => {
-    res.render('show.ejs', {pokemon});
-});
 //New
 app.get('/pokemon/new', (req, res) => {
-    res.render('new.ejs', {});
+    res.render('new.ejs', {allPokemon: pokemon});
 });
-
+//Show
+app.get('/pokemon/:id', (req, res) => {
+    res.render('show.ejs', {pokemon: pokemon[req.params.id]});
+});
 //Edit
 app.get('/pokemon/:id/edit', (req, res) => {
     res.render('edit.ejs', {
         pokemon: pokemon[req.params.id],
         index: req.params.id})
-    res.redirect('/pokemon');
+        res.redirect('/pokemon');
 });
 // CREATE
 app.post('/pokemon', (req, res) => {
-
+    pokemon.push(req.body);
+    res.redirect('/pokemon')
 });
 // UPDATE
 app.put('/pokemon/:id', (req, res) => {
-
+    pokemon[req.params.id] = req.body;
+    res.redirect('/pokemon')
 });
 //Delete
 app.delete('/pokemon/:id', (req, res) => {
- // grab the index from params
  const index = req.params.id;
- //splice the fruit from fruits
  pokemon.splice(index, 1);
- // redirect back to page
  res.redirect('/pokemon')
 })
 

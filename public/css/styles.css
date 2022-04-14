@@ -1,12 +1,15 @@
 .container {
-    display: -webkit-flex;
-    -webkit-flex-flow: column wrap;
-    -webkit-align-items: center;
-}
-ul {
-    display: -webkit-flex;
-}
+    justify-content: center;
+    align-items: center;
+  }
 
-li {
-    -webkit-flex: 1;
-}
+  h1 {
+      font-size: 90px;
+  }
+  
+  ul li {
+    list-style: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  

@@ -3,14 +3,11 @@
     <%- include('partials/head.ejs') %>
 <body>
     <h1>Pokemon Show Page</h1>
-    <%= pokemon.name %>
-    <%= pokemon.type %>
-    <% if (pokemon.image) { %>
-        It is ready to eat
-    <% } else { %>
-        It is not ready to eat 
-    <% } %>
-
-    <a href="/pokemon">Back to Index</a>
+    <div>
+        <p href="/pokemon/:id<%=pokemon%>"><h1><%=pokemon.name%></h1></p>
+        <p href="/pokemon/:id<%=pokemon%>"><img src="<%=pokemon.img%>"></p>
+        <p href="/pokemon/:id<%=pokemon%>"><h1><%=pokemon.type%></h1></p>
+        <a href="/pokemon">Back to Index</a>
+    </div>
 </body>
 </html>
